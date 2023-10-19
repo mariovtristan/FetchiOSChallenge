@@ -14,17 +14,12 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             
-            ScrollView {
-                LazyVStack {
-                    List(viewModel.desserts) { dessert in
-                        NavigationLink {
-                            Text(dessert.strMeal)
-                        } label: {
-                            DessertMainView(dessert: dessert)
-                            
-                        }
-
-                    }
+            List(viewModel.desserts) { dessert in
+                NavigationLink {
+                    Text(dessert.strMeal)
+                } label: {
+                    DessertItem(dessert: dessert)
+                    
                 }
             }
         }

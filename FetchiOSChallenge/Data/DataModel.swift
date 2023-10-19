@@ -10,7 +10,7 @@ import Foundation
 struct Dessert: Identifiable, Codable {
     var id: String
     let strMeal: String
-    let strMealThumb: URL?
+    var strMealThumb: URL?
     
     enum CodingKeys: String, CodingKey {
         case id = "idMeal"

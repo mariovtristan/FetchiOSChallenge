@@ -13,6 +13,7 @@
 		ACC594FC2AE178FD00980306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC594FB2AE178FD00980306 /* Preview Assets.xcassets */; };
 		ACC595042AE1793600980306 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595032AE1793600980306 /* DataModel.swift */; };
 		ACC595072AE1887300980306 /* DessertMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595062AE1887300980306 /* DessertMainView.swift */; };
+		ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0DA392AE1A352009FE034 /* DessertItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		ACC594FB2AE178FD00980306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC595032AE1793600980306 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		ACC595062AE1887300980306 /* DessertMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMainView.swift; sourceTree = "<group>"; };
+		ACD0DA392AE1A352009FE034 /* DessertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC595062AE1887300980306 /* DessertMainView.swift */,
+				ACD0DA392AE1A352009FE034 /* DessertItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				ACC594F72AE178FD00980306 /* ContentView.swift in Sources */,
 				ACC594F52AE178FD00980306 /* FetchiOSChallengeApp.swift in Sources */,
 				ACC595072AE1887300980306 /* DessertMainView.swift in Sources */,
+				ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */,
 				ACC595042AE1793600980306 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchiOSChallenge/Preview Content\"";
+				DEVELOPMENT_TEAM = TRHNAKB283;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FetchiOSChallenge/Preview Content\"";
+				DEVELOPMENT_TEAM = TRHNAKB283;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
