@@ -53,7 +53,7 @@ struct DessertMainView: View {
 struct DessertMainView_Previews: PreviewProvider {
     static let dessert = Dessert(
         id: "53049",
-        strMeal: "Apam balik",
+        name: "Apam balik",
         strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
     )
     static var previews: some View {

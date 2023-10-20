@@ -20,6 +20,7 @@ struct DessertItem: View {
                         image
                             .resizable()
                             .scaledToFill()
+                            .frame(width: 300, height: 150)
                     case .failure:
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
@@ -30,7 +31,9 @@ struct DessertItem: View {
                     }
                 }
                 .frame(width: 300, height: 150)
-                .background(.indigo)
+                .clipped()
+                .background(.brown)
+
             } else {
                 Image(systemName: "xmark.circle.fill")
                     .frame(maxWidth: 200, maxHeight: 200)
@@ -39,26 +42,24 @@ struct DessertItem: View {
             
             HStack {
                 VStack (alignment: .leading) {
-                    Text("\(dessert.strMeal)")
+                    Text("\(dessert.name ?? "No Dessert Name")")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .foregroundColor(.indigo)
-                    //the second argument in the text here specifier: "%.2f" , what it does is takes the extra trailing zeros and cuts it to only 2 decimals
-                    Text("Hello")
-                        .font(.caption)
-                        .foregroundColor(Color("Secondary"))
+                        .foregroundColor(.brown)
                 }
                 .padding(8)
                 Spacer()
             }
         }
+        .background(Color(red: 0.97, green: 0.91, blue: 0.84))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 struct DessertItem_Previews: PreviewProvider {
     static let dessert = Dessert(
         id: "53049",
-        strMeal: "Apam balik",
+        name: "Apam balik",
         strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg")
     )
     static var previews: some View {

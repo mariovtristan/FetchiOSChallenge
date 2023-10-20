@@ -14,6 +14,7 @@
 		ACC595042AE1793600980306 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595032AE1793600980306 /* DataModel.swift */; };
 		ACC595072AE1887300980306 /* DessertMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595062AE1887300980306 /* DessertMainView.swift */; };
 		ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0DA392AE1A352009FE034 /* DessertItem.swift */; };
+		ACD0DA3C2AE1BD31009FE034 /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		ACC595032AE1793600980306 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		ACC595062AE1887300980306 /* DessertMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMainView.swift; sourceTree = "<group>"; };
 		ACD0DA392AE1A352009FE034 /* DessertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertItem.swift; sourceTree = "<group>"; };
+		ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				ACC595062AE1887300980306 /* DessertMainView.swift */,
 				ACD0DA392AE1A352009FE034 /* DessertItem.swift */,
+				ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				ACC594F72AE178FD00980306 /* ContentView.swift in Sources */,
 				ACC594F52AE178FD00980306 /* FetchiOSChallengeApp.swift in Sources */,
+				ACD0DA3C2AE1BD31009FE034 /* DessertDetailView.swift in Sources */,
 				ACC595072AE1887300980306 /* DessertMainView.swift in Sources */,
 				ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */,
 				ACC595042AE1793600980306 /* DataModel.swift in Sources */,

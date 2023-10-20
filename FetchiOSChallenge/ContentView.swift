@@ -16,12 +16,15 @@ struct ContentView: View {
             
             List(viewModel.desserts) { dessert in
                 NavigationLink {
-                    Text(dessert.strMeal)
+                    DessertDetailView(dessert: dessert)
                 } label: {
                     DessertItem(dessert: dessert)
                     
                 }
+                .listRowBackground(Color(.clear))
+                .listRowSeparatorTint(.clear)
             }
+            .navigationTitle("Desserts")
         }
         .padding()
         .onAppear {
