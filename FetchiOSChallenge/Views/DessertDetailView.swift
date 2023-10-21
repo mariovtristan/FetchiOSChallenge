@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DessertDetailView: View {
     @StateObject var viewModel = DessertInfoViewModel()
+    
+    @State var checkedItems = Array(repeating: "square.dashed", count: 20)
+    
     var dessert: Dessert
     
     let layout = [
@@ -69,7 +72,15 @@ struct DessertDetailView: View {
                     HStack {
                         if let dessertInfo = viewModel.dessertInfo {
                             if viewModel.validateNilOrEmpty(dessert: dessertInfo, idx: idx)  {
-                                Image(systemName: "square.dashed")
+                                
+                                Image(systemName: checkedItems[idx])
+                                    .onTapGesture {
+                                        if checkedItems[idx] == "square.dashed" {
+                                            checkedItems[idx] = "square.fill"
+                                        } else {
+                                            checkedItems[idx] = "square.dashed"
+                                        }
+                                    }
                                 Text(viewModel.dessertInfo?["strMeasure\(idx)"] ?? "Loading")
                                 Text(viewModel.dessertInfo?["strIngredient\(idx)"] ?? "Loading")
                                 
@@ -82,6 +93,7 @@ struct DessertDetailView: View {
 
 
                 }
+                
             }
             
             HStack {
@@ -98,12 +110,11 @@ struct DessertDetailView: View {
             }
             .padding(6)
             
-            Text(viewModel.dessertInfo?.instructions ?? "No instructions for this receupe")
+            Text(viewModel.dessertInfo?.instructions ?? "No instructions for this receipe")
                 .padding(.horizontal)
 
             
 
-//            Text(viewModel.dessertInfo?.name ?? "NA")
         }
         .onAppear {
             Task {
@@ -112,6 +123,8 @@ struct DessertDetailView: View {
                 } else {
                     return
                 }
+                
+
             }
         }
     }

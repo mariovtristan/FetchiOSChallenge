@@ -78,8 +78,6 @@ struct DessertInfo: Identifiable, Codable {
         case strMeasure6, strMeasure7, strMeasure8, strMeasure9, strMeasure10
         case strMeasure11, strMeasure12, strMeasure13, strMeasure14, strMeasure15
         case strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20
-        //        case ingredients = "strIngredients"
-        //        case measurements = "strMeasurements"
     }
     
     subscript(key: String) -> String? {
@@ -131,53 +129,14 @@ struct DessertInfo: Identifiable, Codable {
         
         
     }
+    
 }
 
 class DessertData: Codable {
     var meals: [DessertInfo]
 }
 
-//struct DessertData: Codable {
-//    let name: String?
-//    let category: String?
-//    let instructions: String?
-//    let thumbnailURL: URL?
-//    let ingredients: [String?]
-//    let measurements: [String?]
-//
-//    enum CodingKeys: String, CodingKey {
-//        case name = "strMeal"
-//        case category = "strCategory"
-//        case instructions = "strInstructions"
-//        case thumbnailURL = "strMealThumb"
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        name = try container.decodeIfPresent(String.self, forKey: .name)
-//        category = try container.decodeIfPresent(String.self, forKey: .category)
-//        instructions = try container.decodeIfPresent(String.self, forKey: .instructions)
-//        thumbnailURL = try container.decodeIfPresent(URL.self, forKey: .thumbnailURL)
-//
-//        ingredients = (1...20).compactMap { index in
-//            if let key = CodingKeys(rawValue: "strIngredient\(index)") {
-//                print("this is the key", key)
-//                return try? container.decodeIfPresent(String.self, forKey: key)
-//            } else {
-//                return nil
-//            }
-//        }
-//
-//        measurements = (1...20).compactMap { index in
-//            if let key = CodingKeys(rawValue: "strMeasure\(index)") {
-//                return try? container.decodeIfPresent(String.self, forKey: key)
-//            } else {
-//                return nil
-//            }
-//        }
-//    }
-//}
+
 
 @MainActor
 class DessertsViewModel: ObservableObject {
@@ -197,6 +156,7 @@ class DessertsViewModel: ObservableObject {
 @MainActor
 class DessertInfoViewModel: ObservableObject {
     @Published var dessertInfo: DessertInfo?
+    var checkIngredient = [Bool]()
     
     func loadInformation (id: String) async  {
         
@@ -212,6 +172,7 @@ class DessertInfoViewModel: ObservableObject {
     func validateNilOrEmpty (dessert: DessertInfo, idx: Int) -> Bool {
         if let ingredient = dessert["strIngredient\(idx)"], let measurement = dessert["strMeasure\(idx)"] {
             if ingredient != "" && measurement != "" {
+                checkIngredient.append(false)
                 return true
             } else {
                 return false
@@ -220,6 +181,10 @@ class DessertInfoViewModel: ObservableObject {
         } else {
             return false
         }
+    }
+    
+    func setCheckIngredients () -> [Bool] {
+        return checkIngredient
     }
     
 }
@@ -272,6 +237,7 @@ final class DessertsManager {
         }
         return sortedDesserts
     }
+    
     
     func fetchSingleDessertData (id: String) async throws -> DessertInfo {
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(id)") else {
