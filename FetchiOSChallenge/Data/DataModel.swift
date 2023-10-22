@@ -138,56 +138,6 @@ class DessertData: Codable {
 
 
 
-@MainActor
-class DessertsViewModel: ObservableObject {
-    @Published var desserts = [Dessert]()
-    
-    func loadDesserts () async {
-        do {
-            let dessertsArray = try await DessertsManager.shared.fetchData()
-            self.desserts = dessertsArray
-        } catch {
-            print("Error loading desserts \(error)")
-        }
-    }
-}
-
-
-@MainActor
-class DessertInfoViewModel: ObservableObject {
-    @Published var dessertInfo: DessertInfo?
-    var checkIngredient = [Bool]()
-    
-    func loadInformation (id: String) async  {
-        
-        do {
-            let dessertInfo = try await DessertsManager.shared.fetchSingleDessertData(id: id)
-            self.dessertInfo = dessertInfo
-            
-        } catch {
-            print("Error retrieving data \(error)")
-        }
-    }
-    
-    func validateNilOrEmpty (dessert: DessertInfo, idx: Int) -> Bool {
-        if let ingredient = dessert["strIngredient\(idx)"], let measurement = dessert["strMeasure\(idx)"] {
-            if ingredient != "" && measurement != "" {
-                checkIngredient.append(false)
-                return true
-            } else {
-                return false
-            }
-            
-        } else {
-            return false
-        }
-    }
-    
-    func setCheckIngredients () -> [Bool] {
-        return checkIngredient
-    }
-    
-}
 
 final class DessertsManager {
     static let shared = DessertsManager()
@@ -248,7 +198,6 @@ final class DessertsManager {
             let (data, _) = try await URLSession.shared.data(from: url)
             
             let decodedData = try JSONDecoder().decode(DessertData.self, from: data)
-//            print(decodedData.meals)
             
             guard let dessertInfo = decodedData.meals.first else {
                 throw FetchError.decodingError

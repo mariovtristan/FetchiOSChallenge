@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC061D4E2AE47E30009D1E58 /* DessertInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061D4D2AE47E30009D1E58 /* DessertInfoViewModel.swift */; };
+		AC061D502AE47E6C009D1E58 /* DessertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC061D4F2AE47E6C009D1E58 /* DessertsViewModel.swift */; };
 		ACC594F52AE178FD00980306 /* FetchiOSChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC594F42AE178FD00980306 /* FetchiOSChallengeApp.swift */; };
 		ACC594F72AE178FD00980306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC594F62AE178FD00980306 /* ContentView.swift */; };
 		ACC594F92AE178FD00980306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC594F82AE178FD00980306 /* Assets.xcassets */; };
 		ACC594FC2AE178FD00980306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC594FB2AE178FD00980306 /* Preview Assets.xcassets */; };
 		ACC595042AE1793600980306 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595032AE1793600980306 /* DataModel.swift */; };
-		ACC595072AE1887300980306 /* DessertMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC595062AE1887300980306 /* DessertMainView.swift */; };
 		ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0DA392AE1A352009FE034 /* DessertItem.swift */; };
 		ACD0DA3C2AE1BD31009FE034 /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC061D4D2AE47E30009D1E58 /* DessertInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertInfoViewModel.swift; sourceTree = "<group>"; };
+		AC061D4F2AE47E6C009D1E58 /* DessertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsViewModel.swift; sourceTree = "<group>"; };
 		ACC594F12AE178FD00980306 /* FetchiOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchiOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC594F42AE178FD00980306 /* FetchiOSChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchiOSChallengeApp.swift; sourceTree = "<group>"; };
 		ACC594F62AE178FD00980306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACC594F82AE178FD00980306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC594FB2AE178FD00980306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC595032AE1793600980306 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		ACC595062AE1887300980306 /* DessertMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMainView.swift; sourceTree = "<group>"; };
 		ACD0DA392AE1A352009FE034 /* DessertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertItem.swift; sourceTree = "<group>"; };
 		ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC061D4C2AE47E0D009D1E58 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC061D4D2AE47E30009D1E58 /* DessertInfoViewModel.swift */,
+				AC061D4F2AE47E6C009D1E58 /* DessertsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ACC594E82AE178FD00980306 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC594F42AE178FD00980306 /* FetchiOSChallengeApp.swift */,
-				ACC594F62AE178FD00980306 /* ContentView.swift */,
+				AC061D4C2AE47E0D009D1E58 /* ViewModel */,
 				ACC595052AE1885400980306 /* Views */,
 				ACC595022AE1792B00980306 /* Data */,
 				ACC594F82AE178FD00980306 /* Assets.xcassets */,
@@ -88,7 +99,7 @@
 		ACC595052AE1885400980306 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ACC595062AE1887300980306 /* DessertMainView.swift */,
+				ACC594F62AE178FD00980306 /* ContentView.swift */,
 				ACD0DA392AE1A352009FE034 /* DessertItem.swift */,
 				ACD0DA3B2AE1BD31009FE034 /* DessertDetailView.swift */,
 			);
@@ -168,7 +179,8 @@
 				ACC594F72AE178FD00980306 /* ContentView.swift in Sources */,
 				ACC594F52AE178FD00980306 /* FetchiOSChallengeApp.swift in Sources */,
 				ACD0DA3C2AE1BD31009FE034 /* DessertDetailView.swift in Sources */,
-				ACC595072AE1887300980306 /* DessertMainView.swift in Sources */,
+				AC061D502AE47E6C009D1E58 /* DessertsViewModel.swift in Sources */,
+				AC061D4E2AE47E30009D1E58 /* DessertInfoViewModel.swift in Sources */,
 				ACD0DA3A2AE1A352009FE034 /* DessertItem.swift in Sources */,
 				ACC595042AE1793600980306 /* DataModel.swift in Sources */,
 			);
